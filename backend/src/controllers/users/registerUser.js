@@ -1,5 +1,7 @@
 const knex = require('../../dataBase/connection');
 const bcrypt = require('bcrypt');
+const transporter = require('../../services/nodemailer');
+const compilerHTML = require('../../utils/compilerHTML');
 
 const registerUser = async (req, res) =>{
     const {name, surname, email, password, birth_date} = req.body;
@@ -18,6 +20,17 @@ const registerUser = async (req, res) =>{
         const encryptedPassword = await bcrypt.hash(password, 10);
 
         await knex('users').insert({name, surname, email, password: encryptedPassword, birth_date});
+
+        const html = await compilerHTML('./src/templates/send.html', {
+            nameUser: name
+        });
+
+        transporter.sendMail({
+            from: process.env.EMAIL_USER,
+            to: `${name} <${email}>`,
+            subject: 'Conta cadastrada com sucesso',
+            html
+        })
 
         return res.status(201).json({message: 'User created'});
     } catch (error) {
