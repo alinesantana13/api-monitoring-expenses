@@ -8,7 +8,8 @@ Para versão 1.1 a ideia é fazer a parte do frontend dessa aplicação.
 
 #### Conta
 
-- Criar conta;
+- Criar conta:
+     - Envia um email confirmando se a conta foi criada;
 - Visualizar sua conta;
 - Atualizar sua conta;
 - Excluir sua conta.
