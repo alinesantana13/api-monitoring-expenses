@@ -8,23 +8,23 @@ Para versão 1.1 a ideia é fazer a parte do frontend dessa aplicação.
 
 #### Conta
 
-- Criar conta:
-     - Envia um email confirmando se a conta foi criada;
-- Visualizar sua conta;
-- Atualizar sua conta;
-- Excluir sua conta.
+- [x] Criar conta:
+     - [x] Envia um email confirmando se a conta foi criada;
+- [ ] Visualizar sua conta;
+- [ ] Atualizar sua conta;
+- [ ] Excluir sua conta.
 
 #### Gastos
 
-- Cadastrar os gastos;
-- Listar os gastos
-- Atualizar os gastos;
-- Exclui os gastos.
+- [ ] Cadastrar os gastos;
+- [ ] Listar os gastos
+- [ ] Atualizar os gastos;
+- [ ] Exclui os gastos.
 
 #### Filtros
 
-- Listar gastos durante o mês;
-- Listar gastos num intervalo de dias.
+- [ ] Listar gastos durante o mês;
+- [ ] Listar gastos num intervalo de dias.
 
 ## 🛠 Tecnologias Utilizadas
 
