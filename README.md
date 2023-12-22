@@ -1,6 +1,8 @@
-# API Monitoring Expenses
+# API Monitoring Expenses v1.0
 
-O projeto é uma aplicação para monitoramento dos gastos, cada usuário pode fazer seu cadastro e logar, ao fazer o login ele terá disponível algumas funcionalidades.
+O projeto é uma aplicação backend para monitoramento dos gastos, cada usuário pode fazer seu cadastro e logar, ao fazer o login ele terá disponível algumas funcionalidades.
+
+Para versão 1.1 a ideia é fazer a parte do frontend dessa aplicação.
 
 ## Funcionalidades da API
 
