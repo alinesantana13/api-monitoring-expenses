@@ -58,7 +58,7 @@ http://localhost:3000 ou o link do deploy
 ## Testar o projeto com o link do deploy
 Pelo link abaixo é possível testar a API pela documentação que foi criada utilizando o Swagger.
 
-<a href="https://api-monitoring-expenses.onrender.com/api-docs">Link para testar API</a>
+<a href="https://api-monitoring-expenses.onrender.com/api-docs" target="_blank">Link para testar API</a>
 
 Link do deploy: https://api-monitoring-expenses.onrender.com
 
