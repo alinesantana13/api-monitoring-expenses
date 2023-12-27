@@ -1,0 +1,118 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Monitoring Expenses",
+        "description": "API de gestão de gastos",
+        "contact": {
+            "email": "aline_santana13@hotmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [{"url": "http://localhost:3000", "description": "API de teste"}],
+    "paths": {
+        "/register": {
+            "post":{
+                "summary": "Cria o cadastro do novo usuário",
+                "tags": ["user"],
+                "requestBody": {
+                    "description": "Criar um novo usuário",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#components/schemas/Usuario"
+                            },
+                            "example": {
+                                "name": "Aline",
+                                "surname": "Santana",
+                                "email": "aline@gmail.com",
+                                "password": "123456",
+                                "birth_date": "12/04/2002"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "User created"
+                    },
+                    "400":{
+                        "description": "Email already registered"
+                    },
+                    "500":{
+                        "description": "Internal server errror"
+                    }
+                }
+            }
+        },
+        "/login":{
+            "post":{
+                "summary": "Acessa a conta",
+                "tags": ["user"],
+                "requestBody":{
+                    "description": "Através do email e senha é possível acessar a conta",
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "type": "object",
+                                "properties": {
+                                    "email": {"type": "string"},
+                                    "password": {"type": "string"}
+                                }
+                            },
+                            "example": {
+                                "email": "ellen@gmail.com",
+                                "password": "123"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Acesso a conta com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema":{                                    
+                                    "type": "object",
+                                    "properties": {
+                                        "user":{
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {"type": "integer"},
+                                                "name": {"type": "string"},
+                                                "email": {"type": "string"},
+                                                "birth_date": {"type": "string"}
+                                            }
+                                        },
+                                        "token": {"type": "string"}
+                                    }
+                            }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Incorrect email or password."
+                    },
+                    "500":{
+                        "description": "Internal server errror"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Usuario": {
+                "type": "object",
+                "properties": {
+                    "id": {"type": "integer"},
+                    "name": {"type": "string"}, 
+                    "surname": {"type": "string"}, 
+                    "email": {"type": "string"}, 
+                    "password": {"type": "string"}, 
+                    "birth_date": {"type": "string"}
+                }
+            }
+        }
+    }
+}
