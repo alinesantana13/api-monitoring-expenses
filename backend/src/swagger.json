@@ -15,12 +15,12 @@
                 "summary": "Cria o cadastro do novo usuário",
                 "tags": ["user"],
                 "requestBody": {
-                    "description": "Criar um novo usuário",
+                    "description": "Dados necessários para criar um novo usuário",
                     "content": {
                         "application/json": {
                             "schema": {
                                 "type": "object",
-                                "$ref": "#components/schemas/Usuario"
+                                "$ref": "#components/schemas/User"
                             },
                             "example": {
                                 "name": "Aline",
@@ -50,7 +50,7 @@
                 "summary": "Acessa a conta",
                 "tags": ["user"],
                 "requestBody":{
-                    "description": "Através do email e senha é possível acessar a conta",
+                    "description": "Dados necessário para acessar a conta",
                     "content": {
                         "application/json":{
                             "schema":{
@@ -102,7 +102,7 @@
     },
     "components": {
         "schemas": {
-            "Usuario": {
+            "User": {
                 "type": "object",
                 "properties": {
                     "id": {"type": "integer"},
