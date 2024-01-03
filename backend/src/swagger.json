@@ -99,6 +99,47 @@
                     }
                 }
             }
+        },
+        "/expenses": {
+            "post": {
+                "summary": "Cadastra as despesas",
+                "tags": ["user"],
+                "security": [{"bearerAuth": []}],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data":{
+                            "schema":{
+                                "type":"object",
+                                "$ref": "#components/schemas/Expense"
+                            }
+                        }
+                    }
+                }
+,
+                "responses": {
+                    "200": {
+                        "description": "Despesa cadastrada",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {"type": "integer"},
+                                        "user_id": {"type": "integer"},
+                                        "name": {"type": "string"},
+                                        "date": {"type": "string"},
+                                        "value": {"type": "number"},
+                                        "category_id": {"type": "integer"},
+                                        "description": {"type": "string"},
+                                        "image": {"type": "string"}
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -113,7 +154,24 @@
                     "password": {"type": "string"}, 
                     "birth_date": {"type": "string"}
                 }
+            },
+            "Expense": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "date": {"type": "string"},
+                    "value": {"type": "number"},
+                    "category_id": {"type": "integer"},
+                    "description": {"type": "string"},
+                    "image": {"type": "string", "format": "binary"}
+                }
             }
+        },
+        "securitySchemes": {
+            "bearerAuth":{
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"}
         }
     }
 }

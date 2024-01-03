@@ -12,7 +12,7 @@ CREATE TABLE categories (
   type VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE registers (
+CREATE TABLE expenses (
   id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL REFERENCES users(id),
   name VARCHAR(255) NOT NULL,

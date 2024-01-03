@@ -4,13 +4,13 @@ const knex = require('../dataBase/connection');
 const authentication = async (req, res, next) => {
     const {authorization} = req.headers;
 
-    if(!authentication){
-        return res.status(401).json({message: "Unauthorized"});
-    }
-
-    const token = authorization.split(' ')[1];
-
     try {
+        if(!authentication){
+            return res.status(401).json({message: "Unauthorized"});
+        }
+
+        const token = authorization.split(' ')[1];
+
         const {id} = jwt.verify(token, process.env.PASS_HASH);
 
         const user = await knex('users').where({id});
