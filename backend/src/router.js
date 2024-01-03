@@ -8,6 +8,7 @@ const validateRequestBody = require('./middleware/validateRequestBody');
 const schemaRegisterUser = require('./schemas/schemaRegisterUser');
 const schemaLogin = require('./schemas/schemaLogin');
 const schemaRegisterExpense = require('./schemas/schemaRegisterExpense');
+const listExpenses = require('./controllers/expenses/listExpenses');
 
 
 const router = express();
@@ -18,5 +19,7 @@ router.post('/login', validateRequestBody(schemaLogin), login);
 router.use(authentication);
 
 router.post('/expenses', multer.single('image'), validateRequestBody(schemaRegisterExpense), registerExpense);
+
+router.get('/expenses', listExpenses);
 
 module.exports = router;
