@@ -10,17 +10,17 @@ Para versão 1.1 a ideia é fazer a parte do frontend dessa aplicação.
 
 - [x] Criar conta:
      - [x] Envia um email confirmando se a conta foi criada;
-- [ ] Acessar a conta
+- [x] Acessar a conta
 - [ ] Visualizar os dados da conta;
 - [ ] Atualizar a conta;
 - [ ] Excluir a conta.
 
-#### Gastos
+#### Despesas
 
-- [ ] Cadastrar os gastos;
-- [ ] Listar os gastos
-- [ ] Atualizar os gastos;
-- [ ] Excluir os gastos.
+- [x] Cadastrar as despesas;
+- [x] Listar as despesas
+- [ ] Atualizar as despesas;
+- [x] Excluir as despesas.
 
 #### Filtros
 
