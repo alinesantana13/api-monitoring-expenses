@@ -103,7 +103,7 @@
         "/expenses": {
             "post": {
                 "summary": "Cadastra as despesas",
-                "tags": ["user"],
+                "tags": ["expenses"],
                 "security": [{"bearerAuth": []}],
                 "requestBody": {
                     "content": {
@@ -114,8 +114,7 @@
                             }
                         }
                     }
-                }
-,
+                },
                 "responses": {
                     "200": {
                         "description": "Despesa cadastrada",
@@ -137,6 +136,45 @@
                                 }
                             }
                         }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Lista todas as despesas do usuário",
+                "tags": ["expenses"],
+                "security": [{"bearerAuth": []}],
+                "parameters": [
+                    {"name": "name",
+                    "in": "query",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+                ],
+                "responses":{
+                    "200":{
+                        "description": "Lista de despesas"
+
+                    }
+                }
+            }},
+            "/expenses/{id}": {
+            "delete": {
+                "summary": "Deleta uma despesa de acordo com o id passado",
+                "tags": ["expenses"],
+                "security": [{"bearerAuth": []}],
+                "parameters": [
+                    {"name": "id",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }],
+                "responses": {
+                    "204": {
+                        "description": ""
                     }
                 }
             }
