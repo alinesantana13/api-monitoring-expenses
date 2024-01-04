@@ -9,6 +9,7 @@ const schemaRegisterUser = require('./schemas/schemaRegisterUser');
 const schemaLogin = require('./schemas/schemaLogin');
 const schemaRegisterExpense = require('./schemas/schemaRegisterExpense');
 const listExpenses = require('./controllers/expenses/listExpenses');
+const deleteExpense = require('./controllers/expenses/deleteExpense');
 
 
 const router = express();
@@ -19,7 +20,7 @@ router.post('/login', validateRequestBody(schemaLogin), login);
 router.use(authentication);
 
 router.post('/expenses', multer.single('image'), validateRequestBody(schemaRegisterExpense), registerExpense);
-
 router.get('/expenses', listExpenses);
+router.delete('/expenses/:id', deleteExpense);
 
 module.exports = router;
